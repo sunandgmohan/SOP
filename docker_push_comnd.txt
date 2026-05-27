@@ -1,4 +1,4 @@
-⚡ DOCKER PUSH ⚡
+🐋 DOCKER PUSH 🐋
 
 🎯  	Build image
 
