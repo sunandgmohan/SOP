@@ -1,101 +1,103 @@
-Cluster Management:
+⭐ KUBECTL COMMANDS ⭐
 
-    kubectl cluster-info: Display cluster information.
+📌 Cluster Management:
 
-    kubectl get nodes: List all nodes in the cluster.
+    ⚙️ kubectl cluster-info: Display cluster information.
 
-    kubectl describe node node_name: Show detailed information about a specific node.
+    ⚙️ kubectl get nodes: List all nodes in the cluster.
 
-Pod Management:
+    ⚙️ kubectl describe node node_name: Show detailed information about a specific node.
 
-    kubectl get pods: List all pods in the current namespace.
+📌 Pod Management:
 
-    kubectl describe pod pod_name: Show detailed information about a specific pod.
+    ⚙️ kubectl get pods: List all pods in the current namespace.
 
-    kubectl logs pod_name: Print the logs of a specific pod.
+    ⚙️ kubectl describe pod pod_name: Show detailed information about a specific pod.
 
-    kubectl exec -it pod_name -- container_name command: Execute a command in a running container within a pod.
+    ⚙️ kubectl logs pod_name: Print the logs of a specific pod.
 
-    kubectl delete pod pod_name: Delete a specific pod.
+    ⚙️ kubectl exec -it pod_name -- container_name command: Execute a command in a running container within a pod.
 
-Deployment Management:
+    ⚙️ kubectl delete pod pod_name: Delete a specific pod.
 
-    kubectl get deployments: List all deployments in the current namespace.
+📌 Deployment Management:
 
-    kubectl describe deployment deployment_name: Show detailed information about a specific deployment.
+    ⚙️ kubectl get deployments: List all deployments in the current namespace.
 
-    kubectl scale deployment deployment_name --replicas=3: Scale the number of replicas for a deployment to 3.
+    ⚙️ kubectl describe deployment deployment_name: Show detailed information about a specific deployment.
 
-    kubectl rollout status deployment deployment_name: Check the status of a deployment rollout.
+    ⚙️ kubectl scale deployment deployment_name --replicas=3: Scale the number of replicas for a deployment to 3.
 
-    kubectl rollout history deployment deployment_name: View the revision history of a deployment.
+    ⚙️ kubectl rollout status deployment deployment_name: Check the status of a deployment rollout.
 
-    kubectl rollout undo deployment deployment_name: Rollback a deployment to the previous revision.
+    ⚙️ kubectl rollout history deployment deployment_name: View the revision history of a deployment.
 
-Service Management:
+    ⚙️ kubectl rollout undo deployment deployment_name: Rollback a deployment to the previous revision.
 
-    kubectl get services: List all services in the current namespace.
+📌 Service Management:
 
-    kubectl describe service service_name: Show detailed information about a specific service.
+    ⚙️ kubectl get services: List all services in the current namespace.
 
-    kubectl expose deployment deployment_name --type=LoadBalancer --port=80: Expose a deployment as a LoadBalancer service on port 80.
+    ⚙️ kubectl describe service service_name: Show detailed information about a specific service.
 
-    kubectl delete service service_name: Delete a specific service.
+    ⚙️ kubectl expose deployment deployment_name --type=LoadBalancer --port=80: Expose a deployment as a LoadBalancer     service on port 80.
 
-Namespace Management:
+    ⚙️ kubectl delete service service_name: Delete a specific service.
 
-    kubectl get namespaces: List all namespaces in the cluster.
+📌 Namespace Management:
 
-    kubectl describe namespace namespace_name: Show detailed information about a specific namespace.
+    ⚙️ kubectl get namespaces: List all namespaces in the cluster.
 
-    kubectl create namespace namespace_name: Create a new namespace.
+    ⚙️ kubectl describe namespace namespace_name: Show detailed information about a specific namespace.
 
-    kubectl delete namespace namespace_name: Delete a specific namespace.
+    ⚙️ kubectl create namespace namespace_name: Create a new namespace.
 
-Configuration Management:
+    ⚙️ kubectl delete namespace namespace_name: Delete a specific namespace.
 
-    kubectl create configmap configmap_name --from-file=path/to/file: Create a ConfigMap from a file.
+📌 Configuration Management:
 
-    kubectl create secret generic secret_name --from-literal=key=value: Create a Secret from a literal key-value pair.
+    ⚙️ kubectl create configmap configmap_name --from-file=path/to/file: Create a ConfigMap from a file.
 
-    kubectl describe configmap/configmap_name: Show detailed information about a specific ConfigMap.
+    ⚙️ kubectl create secret generic secret_name --from-literal=key=value: Create a Secret from a literal key-value pair.
 
-    kubectl describe secret/secret_name: Show detailed information about a specific Secret.
+    ⚙️ kubectl describe configmap/configmap_name: Show detailed information about a specific ConfigMap.
 
-    kubectl get configmaps: List all ConfigMaps in the current namespace.
+    ⚙️ kubectl describe secret/secret_name: Show detailed information about a specific Secret.
 
-    kubectl get secrets: List all Secrets in the current namespace.
+    ⚙️ kubectl get configmaps: List all ConfigMaps in the current namespace.
 
-Volume Management:
+    ⚙️ kubectl get secrets: List all Secrets in the current namespace.
 
-    kubectl get pv: List all persistent volumes.
+📌 Volume Management:
 
-    kubectl get pvc: List all persistent volume claims in the current namespace.
+    ⚙️ kubectl get pv: List all persistent volumes.
 
-    kubectl describe pv pv_name: Show detailed information about a specific persistent volume.
+    ⚙️ kubectl get pvc: List all persistent volume claims in the current namespace.
 
-    kubectl describe pvc pvc_name: Show detailed information about a specific persistent volume claim.
+    ⚙️ kubectl describe pv pv_name: Show detailed information about a specific persistent volume.
 
-Health Checks:
+    ⚙️ kubectl describe pvc pvc_name: Show detailed information about a specific persistent volume claim.
 
-    kubectl get readiness/liveness probe pod_name: Check the status of readiness or liveness probes for a specific pod.
+📌 Health Checks:
 
-    kubectl describe pod pod_name: Show the status of readiness and liveness probes for containers within a pod.
+    ⚙️ kubectl get readiness/liveness probe pod_name: Check the status of readiness or liveness probes for a specific pod.
 
-Secrets and ConfigMaps:
+    ⚙️ kubectl describe pod pod_name: Show the status of readiness and liveness probes for containers within a pod.
 
-    kubectl create secret generic secret_name --from-file=path/to/file: Create a Secret from a file.
+📌 Secrets and ConfigMaps:
 
-    kubectl create configmap configmap_name --from-file=path/to/file: Create a ConfigMap from a file.
+    ⚙️ kubectl create secret generic secret_name --from-file=path/to/file: Create a Secret from a file.
 
-    kubectl create secret generic secret_name --from-literal=key=value: Create a Secret from a literal key-value pair.
+    ⚙️ kubectl create configmap configmap_name --from-file=path/to/file: Create a ConfigMap from a file.
 
-    kubectl create configmap configmap_name --from-literal=key=value: Create a ConfigMap from a literal key-value pair.
+    ⚙️ kubectl create secret generic secret_name --from-literal=key=value: Create a Secret from a literal key-value pair.
 
-Advanced Operations:
+    ⚙️ kubectl create configmap configmap_name --from-literal=key=value: Create a ConfigMap from a literal key-value pair.
 
-    kubectl apply -f filename: Apply a configuration file to create or update resources.
+📌 Advanced Operations:
 
-    kubectl explain resource: Get detailed information about a specific resource.
+    ⚙️ kubectl apply -f filename: Apply a configuration file to create or update resources.
 
-    kubectl get events: List events related to resources in the current namespace.
+    ⚙️ kubectl explain resource: Get detailed information about a specific resource.
+
+    ⚙️ kubectl get events: List events related to resources in the current namespace.
