@@ -1,4 +1,4 @@
-⚡ HELM INSTALLATION ⚡
+☸ HELM INSTALLATION ☸
 
 🎯 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
 chmod 700 get_helm.sh
@@ -35,7 +35,7 @@ chmod 700 get_helm.sh
    🎯 helm get manifest nginx (to see the yaml file and other details (nginx is the release name here))
    🎯 helm repo remove bitnami (to remove)
 
-🧪 TO MODIFY AN EXISTING CHART 🧪
+☸︎ TO MODIFY AN EXISTING CHART ☸︎
  🎯  helm upgrade nginx   stable/nginx-ingress --set replicaCount=3
             (release name) (chart name)                                   
  🎯 helm history nginx (will get an out put as below)
