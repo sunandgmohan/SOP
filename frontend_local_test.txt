@@ -1,14 +1,14 @@
-front end local test
+🧩 front end local test
 
 
 npm install
 npm run dev
 
-. if node version error pops up 
+🧩 if node version error pops up 
   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
   sudo apt-get install -y nodejs
 
-. to merge with another branch
+🧩 to merge with another branch
 
  git clone dev
  git fetch origin
