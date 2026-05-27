@@ -1,30 +1,30 @@
-kops
+🚀 kops Installation 🚀
 
 
-1. create an instance
-2. install kubectl
-3. curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+🧩 create an instance
+🧩 install kubectl
+🧩 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
    chmod +x kubectl
    sudo mv kubectl /usr/local/bin  (to access kubectl)
    kubectl version (to verify)
 
-4. install kops 
-curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
-chmod +x kops
-sudo mv kops /usr/local/bin/kops
+🎯 install kops 
+   curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/      kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+   chmod +x kops
+   sudo mv kops /usr/local/bin/kops
 
-5. aws configure (if its not installed)
+🧩 aws configure (if its not installed)
   install awscli
   sudo apt install awscli
   aws configure
 
-6. create s3 bucket
+🧩 create s3 bucket
 
    aws s3 mb s3://bucketname --region us-east-1  (mb-make bucket, bucket name should be globally unique)
    aws s3 ls (to see buckets)
 
-7. create cluster
-kops create cluster --name=kop.local.com \
+🧩 create cluster
+  kops create cluster --name=kop.local.com \
   --state=s3://bucketname \
   --zones=us-east-1a \
   --node-count=2 \
@@ -35,14 +35,14 @@ kops create cluster --name=kop.local.com \
 
    (this is for 2 workers and 1 master)
 
-8. Running the above command will generate a preview of all the resources that Kops will create. Once you are okay with the      preview, run the below command to create those resources. Update the S3 bucket to your S3 bucket.
+🧩 Running the above command will generate a preview of all the resources that Kops will create. Once you are okay with the      preview, run the below command to create those resources. Update the S3 bucket to your S3 bucket.
 
-  export KOPS_STATE_STORE=s3://bucketname
+    export KOPS_STATE_STORE=s3://bucketname
 
-9. to validate 
+🧩 to validate 
    kops validate cluster clustername
 
-then kubectl get nodes
+    then kubectl get nodes
 
-11. to delete
+🧩 to delete
     kops delete cluster cluster-name
