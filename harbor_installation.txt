@@ -1,4 +1,4 @@
-⚡ Harbor installation ⚡
+⚓ Harbor installation ⚓
 
 🧩.install docker and docker compose
 
