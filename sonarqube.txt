@@ -1,18 +1,21 @@
-SONARQUBE
+🚀 SONARQUBE 🚀
 
 
-installation
-docker run -d --name sonar -p 9000:9000 --restart sonarqube:lts-community
+📦 installation
+   docker run -d --name sonar -p 9000:9000 --restart sonarqube:lts-community
 
-2. ip:9000
-3.admin admin
-4.configuration- webhook- create- sonar
+🧩 go to sonarqube console on browser
+🧩 ip:9000
+🧩 admin admin (userid and pwd)
+🧩 configuration- webhook- create- sonar
                                   jenkinsurl/sonarqube-webhook   eg-http://172.17.0.1:8080/sonarqube-webhook
                                   
-5.create
-6.security- users- update token- generate 
-7. jenkins - credentials - add - secret text- save token there
-8.jenkins- systems - sonarqubeservers- givename- add the token here  
+🧩 create
+🧩security- users- update token- generate 
+🧩 jenkins - credentials - add - secret text- save token there
+🧩 jenkins- systems - sonarqubeservers- givename- add the token here  
+
+⚡ PIPELINE ⚡
 
 environment {
         HARBOR_URL = "172.18.0.1"
