@@ -1,4 +1,4 @@
-⚡ KIND INSTALLATION ⚡
+☸️ KIND INSTALLATION ☸️
 
 
 #!/bin/bash
