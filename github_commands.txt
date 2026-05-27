@@ -1,21 +1,21 @@
-git clone "url"
+🐈‍⬛ git clone "url"
 
-git add ./file name
+🐈‍⬛ git add ./file name
 
-git commit -m "1st commit"
+🐈‍⬛ git commit -m "1st commit"
 
-git push -u origin main
+🐈‍⬛ git push -u origin main
 
-git pull origin main
+🐈‍⬛ git pull origin main
 
-git checkout (to see on which branch currently)
+🐈‍⬛ git checkout (to see on which branch currently)
 
-git checkout 'branchname' (to change branch)
+🐈‍⬛ git checkout 'branchname' (to change branch)
 
-## GIT MERGE ###
+🔗 GIT MERGE 🔗
 
-git checkout sunand
+🐈‍⬛ git checkout sunand
 
-git fetch origin
-git merge origin/'the other branch name'
+🐈‍⬛ git fetch origin
+🐈‍⬛ git merge origin/'the other branch name'
 
