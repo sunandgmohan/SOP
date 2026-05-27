@@ -1,3 +1,5 @@
+📌  confg.yaml 
+
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -9,3 +11,7 @@ nodes:
   - containerPort: 80
     hostPort: 80
     protocol: tcp
+
+📌 CREATE CLUSTER
+ 
+   kind create cluster --name=my-cluster --config=config.yaml
