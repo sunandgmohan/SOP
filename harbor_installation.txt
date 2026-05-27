@@ -1,0 +1,119 @@
+Harbor installation
+
+1.install docker and docker compose
+
+2. cd /opt
+3. sudo wget https://github.com/goharbor/harbor/releases/download/v2.13.0/harbor-online-installer-v2.13.0.tgz
+
+4.sudo tar xvf harbor-online-installer-v2.13.0.tgz
+
+5. cd harbor
+
+6. sudo cp harbor.yml.tmpl harbor.yml
+
+
+7. sudo vi harbor.yml
+
+8. edit --   hostname: your-server-ip
+
+            harbor_admin_password: Harbor12345
+
+            data_volume: /data
+
+
+9. check the following in the same file
+   # https:
+   # port: 443
+   # certificate: /your/cert/path
+   # private_key: /your/key/path
+
+    http:
+    port: 80
+
+
+10. sudo ./install.sh
+
+
+11. to open it on browser 
+     http://YOUR_SERVER_IP
+
+
+12.  Username: admin
+     Password: Harbor12345
+
+13. configure docker to trust access the harbor
+     sudo vi /etc/docker/daemon.json
+
+   {
+    "insecure-registries": ["YOUR_SERVER_IP"]
+    }
+
+
+14. sudo systemctl restart docker
+
+
+15 . docker login YOUR_SERVER_IP
+
+
+16. jenkins pipeline to push 
+
+      pipeline {
+       agent any
+
+        environment {
+        HARBOR_URL = "192.168.1.10"
+        PROJECT_NAME = "testproject" (create a project in harbor and name it the same)
+        IMAGE_NAME = "myapp"
+        IMAGE_TAG = "v1"
+        HARBOR_CREDS = "harbor-creds" (create a credential in jenkins)
+       }
+
+
+
+      stage('Build Docker Image') {
+      steps {
+      script {
+      docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+     }
+     }
+     }
+
+     stage('Tag Docker Image') {
+     steps {
+     sh """
+     docker tag ${IMAGE_NAME}:${IMAGE_TAG} ${HARBOR_URL}/${PROJECT_NAME}/${IMAGE_NAME}:${IMAGE_TAG}
+     
+     """
+    }
+    }
+
+   stage('Login to Harbor') {
+   steps {
+   withCredentials([usernamePassword(
+   credentialsId: "${HARBOR_CREDS}",
+   usernameVariable: 'HARBOR_USER',
+   passwordVariable: 'HARBOR_PASS'
+   )]) {
+
+   sh """
+   echo "$HARBOR_PASS" | docker login ${HARBOR_URL} \
+   -u "$HARBOR_USER" --password-stdin
+   """
+   }
+   }
+   }
+
+   stage('Push Image to Harbor') {
+   steps {
+   sh """
+   docker push ${HARBOR_URL}/${PROJECT_NAME}/${IMAGE_NAME}:${IMAGE_TAG}
+
+   """
+   }
+   }
+   }
+   
+   
+   # sudo vim /etc/hosts
+   
+  # hostnamectl set-hostname "hostname.com" - to set name to IP

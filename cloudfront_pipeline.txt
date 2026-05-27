@@ -1,0 +1,44 @@
+ pipeline{
+  agent any
+ 
+    environment{
+    S3_BUCKET='crm-managerpanel-qa'
+    DISTRIBUTION_ID='E17J7998BMK9UK'
+       }
+ 
+   stages{
+       stage('checkout'){
+         steps{
+          git branch: 'sunand', credentialsId: 'github-cred', url: 'https://github.com/Client-Management-Project/CRM-Frontend-ManagerPanel.git'
+            }
+           }
+ 
+       stage('install dependendies'){
+         steps{
+          sh "npm install"
+             }
+           }
+ 
+       stage('build static files'){
+         steps{
+          sh "npm run build"
+              }
+           }
+ 
+       stage('move static file to s3 bucket'){
+         steps{
+           withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'kiaq-aws-cred']]){
+           sh "/usr/local/bin/aws s3 sync dist/ s3://${S3_BUCKET} --delete"
+              }
+             }
+           }
+ 
+       stage('invalidate cloudfront cache'){
+         steps{
+             withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'kiaq-aws-cred']]){
+             sh "/usr/local/bin/aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths '/*'"
+               }
+              }
+             }
+       }
+      }

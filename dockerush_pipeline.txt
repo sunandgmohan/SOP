@@ -1,0 +1,61 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = "sunandgmohan/kubeadm"
+        TAG = "latest"
+        KUBE_CONFIG = "/home/jenkins/.kube/config"
+    }
+
+    stages {
+        stage ('git checkout'){
+          steps {
+                git url: 'https://github.com/sunandgmohan/kubeadmproject.git', branch: 'main'
+            }
+        }
+
+        stage('build docker image'){
+            steps{
+                script {
+                    sh "docker build -t $DOCKER_IMAGE:$TAG ."
+                }
+              }
+            }
+
+        stage('Login to Docker Hub') {
+            steps {
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerkey',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
+                }
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                sh "docker push $DOCKER_IMAGE:$TAG"
+            }
+        }
+        stage('login ec2 & run deployment and service') {
+            steps {
+                sshagent(['aws-node']) {
+                    sh '''
+                        ssh -A -o StrictHostKeyChecking=no ubuntu@3.87.75.195 \
+                            "set -e && \
+                            rm -rf kubeadm || true && \
+                            mkdir /home/ubuntu/kubeadm && \
+                            cd /home/ubuntu/kubeadm && \
+                            rm -rf kubeadmproject.git || true && \
+                            git clone https://github.com/sunandgmohan/kubeadmproject.git && \
+                            cd ./kubeadmproject/k8s && \
+                            kubectl apply -f deployment.yaml
+                            kubectl apply -f service.yaml"
+                        '''
+                }
+            }
+        }
+    }
+}

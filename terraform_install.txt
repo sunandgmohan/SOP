@@ -1,0 +1,27 @@
+TERRAFORM
+
+
+1.installation
+
+wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+
+
+STEPS
+
+1. Create a directory for your Terraform project and create a Terraform configuration file (usually named main.tf) in that directory. In this file, you define the AWS provider and resources you want to create. Here's a basic example
+
+   provider "aws" {
+     region = "us-east-1"  # Set your desired AWS region
+   }
+
+   resource "aws_instance" "example" {
+     ami           = "get the ami from image section"  # Specify an appropriate AMI ID
+     instance_type = "t2.micro"
+   }
+2. terraform init
+
+3. terraform apply
+
+4. terraform destroy (to remove)
