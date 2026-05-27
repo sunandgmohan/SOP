@@ -1,0 +1,21 @@
+git clone "url"
+
+git add ./file name
+
+git commit -m "1st commit"
+
+git push -u origin main
+
+git pull origin main
+
+git checkout (to see on which branch currently)
+
+git checkout 'branchname' (to change branch)
+
+## GIT MERGE ###
+
+git checkout sunand
+
+git fetch origin
+git merge origin/'the other branch name'
+
