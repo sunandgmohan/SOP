@@ -1,13 +1,13 @@
-DOCKER PUSH
+⚡ DOCKER PUSH ⚡
 
-1. 	Build image
+🎯  	Build image
 
       docker build -t projectname .
       
-2. Docker tag
+🎯  Docker tag
 
    docker tag projectname dockerusername/reponame:tag
    
-3. Docker push
+🎯  Docker push
   
    docker push dockerusername/reponame:tag
