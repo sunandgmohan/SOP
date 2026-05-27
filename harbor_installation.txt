@@ -1,27 +1,27 @@
 ⚓ Harbor installation ⚓
 
-🧩.install docker and docker compose
+📌 install docker and docker compose
 
-🧩. cd /opt
-🧩. sudo wget https://github.com/goharbor/harbor/releases/download/v2.13.0/harbor-online-installer-v2.13.0.tgz
+📌  cd /opt
+📌  sudo wget https://github.com/goharbor/harbor/releases/download/v2.13.0/harbor-online-installer-v2.13.0.tgz
 
-🧩.sudo tar xvf harbor-online-installer-v2.13.0.tgz
+📌 sudo tar xvf harbor-online-installer-v2.13.0.tgz
 
-🧩. cd harbor
+📌  cd harbor
 
-🧩. sudo cp harbor.yml.tmpl harbor.yml
+📌  sudo cp harbor.yml.tmpl harbor.yml
 
 
-🧩. sudo vi harbor.yml
+📌  sudo vi harbor.yml
 
-🧩. edit --   hostname: your-server-ip
+📌  edit --   hostname: your-server-ip
 
             harbor_admin_password: Harbor12345
 
             data_volume: /data
 
 
-🧩. check the following in the same file
+📌  check the following in the same file
    # https:
    # port: 443
    # certificate: /your/cert/path
@@ -31,17 +31,17 @@
     port: 80
 
 
-🧩. sudo ./install.sh
+📌  sudo ./install.sh
 
 
-🧩. to open it on browser 
+📌  to open it on browser 
      http://YOUR_SERVER_IP
 
 
-🧩.  Username: admin
+📌   Username: admin
      Password: Harbor12345
 
-🧩. configure docker to trust access the harbor
+📌  configure docker to trust access the harbor
      sudo vi /etc/docker/daemon.json
 
    {
@@ -49,13 +49,13 @@
     }
 
 
-🧩. sudo systemctl restart docker
+📌  sudo systemctl restart docker
 
 
-🧩 . docker login YOUR_SERVER_IP
+📌  docker login YOUR_SERVER_IP
 
 
-🧩. jenkins pipeline to push 
+📌  jenkins pipeline to push 
 
       pipeline {
        agent any
@@ -114,6 +114,6 @@
    }
    
    
-   🧩 sudo vim /etc/hosts
+  📌  sudo vim /etc/hosts
    
-  🧩 hostnamectl set-hostname "hostname.com" - to set name to IP
+  📌  hostnamectl set-hostname "hostname.com" - to set name to IP
