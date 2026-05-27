@@ -1,147 +1,149 @@
-Docker Build Commands:
+🐋 DOCKER COMPOSE 🐋
 
-    docker build -t <image_name> .: Build a Docker image from a Dockerfile in the current directory and tag it with a name.
+📌 Docker Build Commands:
 
-    docker build --no-cache -t <image_name> .: Build a Docker image without using the cache.
+    💡 docker build -t <image_name> .: Build a Docker image from a Dockerfile in the current directory and tag it with a name.
 
-    docker build -f <dockerfile_name> -t <image_name> .: Build a Docker image using a specified Dockerfile.
+    💡 docker build --no-cache -t <image_name> .: Build a Docker image without using the cache.
 
-Docker Clean Up Commands:
+    💡 docker build -f <dockerfile_name> -t <image_name> .: Build a Docker image using a specified Dockerfile.
 
-    docker system prune: Remove all unused Docker resources, including containers, images, networks, and volumes.
+📌 Docker Clean Up Commands:
 
-    docker container prune: Remove all stopped containers.
+    💡 docker system prune: Remove all unused Docker resources, including containers, images, networks, and volumes.
 
-    docker image prune: Remove unused images.
+    💡 docker container prune: Remove all stopped containers.
 
-    docker volume prune: Remove unused volumes.
+    💡 docker image prune: Remove unused images.
 
-    docker network prune: Remove unused networks.
+    💡 docker volume prune: Remove unused volumes.
 
-Container Interaction Commands:
+    💡 docker network prune: Remove unused networks.
 
-    docker run <image_name>: Run a Docker image as a container.
+📌 Container Interaction Commands:
 
-    docker start <container_id>: Start a stopped container.
+    💡 docker run <image_name>: Run a Docker image as a container.
 
-    docker stop <container_id>: Stop a running container.
+    💡 docker start <container_id>: Start a stopped container.
 
-    docker restart <container_id>: Restart a running container.
+    💡 docker stop <container_id>: Stop a running container.
 
-    docker exec -it <container_id> <command>: Execute a command inside a running container interactively.
+    💡 docker restart <container_id>: Restart a running container.
 
-Container Inspection Commands:
+    💡 docker exec -it <container_id> <command>: Execute a command inside a running container interactively.
 
-    docker ps: List running containers.
+📌 Container Inspection Commands:
 
-    docker ps -a: List all containers, including stopped ones.
+    💡 docker ps: List running containers.
 
-    docker logs <container_id>: Fetch the logs of a specific container.
+    💡 docker ps -a: List all containers, including stopped ones.
 
-    docker inspect <container_id>: Inspect detailed information about a container.
+    💡 docker logs <container_id>: Fetch the logs of a specific container.
 
-Image Commands:
+    💡 docker inspect <container_id>: Inspect detailed information about a container.
 
-    docker images: List available Docker images.
+📌 Image Commands:
 
-    docker pull <image_name>: Pull a Docker image from a Docker registry.
+   💡docker images: List available Docker images.
 
-    docker push <image_name>: Push a Docker image to a Docker registry.
+   💡 docker pull <image_name>: Pull a Docker image from a Docker registry.
 
-    docker rmi <image_id>: Remove a Docker image.
+   💡  docker push <image_name>: Push a Docker image to a Docker registry.
 
-Docker Run Commands:
+   💡 docker rmi <image_id>: Remove a Docker image.
 
-    docker run -d <image_name>: Run a Docker image as a container in detached mode.
+📌 Docker Run Commands:
 
-    docker run -p <host_port>:<container_port> <image_name>: Publish container ports to the host.
+   💡 docker run -d <image_name>: Run a Docker image as a container in detached mode.
 
-    docker run -v <host_path>:<container_path> <image_name>: Mount a host directory or volume to a container.
+   💡 docker run -p <host_port>:<container_port> <image_name>: Publish container ports to the host.
 
-    docker run --name <container_name> <image_name>: Assign a custom name to the container.
+   💡  docker run -v <host_path>:<container_path> <image_name>: Mount a host directory or volume to a container.
 
-Docker Registry Commands:
+   💡 docker run --name <container_name> <image_name>: Assign a custom name to the container.
 
-    docker login: Log in to a Docker registry.
+📌 Docker Registry Commands:
 
-    docker logout: Log out from a Docker registry.
+   💡 docker login: Log in to a Docker registry.
 
-    docker search <term>: Search for Docker images in a Docker registry.
+   💡docker logout: Log out from a Docker registry.
 
-    docker pull <registry>/<image_name>: Pull a Docker image from a specific registry.
+   💡 docker search <term>: Search for Docker images in a Docker registry.
 
-Docker Service Commands:
+   💡 docker pull <registry>/<image_name>: Pull a Docker image from a specific registry.
 
-    docker service create --name <service_name> <image_name>: Create a Docker service from an image.
+📌 Docker Service Commands:
 
-    docker service ls: List running Docker services.
+   💡 docker service create --name <service_name> <image_name>: Create a Docker service from an image.
 
-    docker service scale <service_name>=<replicas>: Scale the replicas of a Docker service.
+   💡 docker service ls: List running Docker services.
 
-    docker service logs <service_name>: View logs of a Docker service.
+   💡 docker service scale <service_name>=<replicas>: Scale the replicas of a Docker service.
 
-Docker Network Commands:
+   💡 docker service logs <service_name>: View logs of a Docker service.
 
-    docker network create <network_name>: Create a Docker network.
+📌 Docker Network Commands:
 
-    docker network ls: List available Docker networks.
+   💡 docker network create <network_name>: Create a Docker network.
 
-    docker network inspect <network_name>: Inspect detailed information about a Docker network.
+   💡 docker network ls: List available Docker networks.
 
-    docker network connect <network_name> <container_name>: Connect a container to a Docker network
+   💡 docker network inspect <network_name>: Inspect detailed information about a Docker network.
 
-Docker Volume Commands:
+   💡 docker network connect <network_name> <container_name>: Connect a container to a Docker network
 
-    docker volume create <volume_name>: Create a Docker volume.
+📌 Docker Volume Commands:
 
-    docker volume ls: List available Docker volumes.
+   💡 docker volume create <volume_name>: Create a Docker volume.
 
-    docker volume inspect <volume_name>: Inspect detailed information about a Docker volume.
+   💡 docker volume ls: List available Docker volumes.
 
-    docker volume rm <volume_name>: Remove a Docker volume.
+   💡 docker volume inspect <volume_name>: Inspect detailed information about a Docker volume.
 
-Docker Swarm Commands:
+   💡 docker volume rm <volume_name>: Remove a Docker volume.
 
-    docker swarm init: Initialize a Docker swarm on the current node.
+📌 Docker Swarm Commands:
 
-    docker swarm join: Join a Docker swarm as a worker node.
+   💡 docker swarm init: Initialize a Docker swarm on the current node.
 
-    docker node ls: List the nodes in a Docker swarm.
+   💡 docker swarm join: Join a Docker swarm as a worker node.
 
-    docker service create: Create a service in the Docker swarm.
+   💡 docker node ls: List the nodes in a Docker swarm.
 
-    docker service scale: Scale the replicas of a service in the Docker swarm.
+   💡 docker service create: Create a service in the Docker swarm.
 
-Docker Filesystem Commands:
+   💡 docker service scale: Scale the replicas of a service in the Docker swarm.
 
-    docker cp <container_id>:<container_path> <host_path>: Copy files from a container to the host.
+📌 Docker Filesystem Commands:
 
-    docker cp <host_path> <container_id>:<container_path>: Copy files from the host to a container.
+   💡 docker cp <container_id>:<container_path> <host_path>: Copy files from a container to the host.
 
-Docker Environment Variables:
+   💡 docker cp <host_path> <container_id>:<container_path>: Copy files from the host to a container.
 
-    -e or --env: Set environment variables when running a container.
+📌 Docker Environment Variables:
 
-    docker run -e <variable_name>=<value> <image_name>: Set an environment variable when running a container.
+   💡 -e or --env: Set environment variables when running a container.
 
-Docker Health Checks:
+   💡 docker run -e <variable_name>=<value> <image_name>: Set an environment variable when running a container.
 
-    HEALTHCHECK instruction: Define a command to check the health of a container.
+📌 Docker Health Checks:
 
-    docker container inspect --format='{{json .State.Health}}' <container_name>: Check the health status of a container.
+   💡 HEALTHCHECK instruction: Define a command to check the health of a container.
 
-Docker Compose Commands:
+   💡 docker container inspect --format='{{json .State.Health}}' <container_name>: Check the health status of a container.
 
-    docker-compose up: Create and start containers defined in a Docker Compose file.
+📌 Docker Compose Commands:
 
-    docker-compose down: Stop and remove containers defined in a Docker Compose file.
+   💡 docker-compose up: Create and start containers defined in a Docker Compose file.
 
-    docker-compose ps: List containers defined in a Docker Compose file.
+   💡 docker-compose down: Stop and remove containers defined in a Docker Compose file.
 
-    docker-compose logs: View logs of containers defined in a Docker Compose file.
+   💡 docker-compose ps: List containers defined in a Docker Compose file.
 
-Docker Stats:
+   💡 docker-compose logs: View logs of containers defined in a Docker Compose file.
 
-    docker stats: Display a live stream of resource usage by containers.
+📌 Docker Stats:
 
-    docker stats <container_name>: Display the resource usage of a specific container.
+   💡 docker stats: Display a live stream of resource usage by containers.
+
+   💡 docker stats <container_name>: Display the resource usage of a specific container.
