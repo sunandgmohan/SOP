@@ -1,55 +1,56 @@
 ☸ HELM INSTALLATION ☸
 
-🎯 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
+📌  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4
 chmod 700 get_helm.sh
 ./get_helm.sh 
 
 
-🎯  to see repos 
+📌   to see repos 
    helm repo list 
-🎯  to delete 
+📌   to delete 
   helm repo remove [REPO_NAME]
  
-🎯  TO CREATE A HELM CHART
+📌   TO CREATE A HELM CHART
    helm create <chart name>
-🎯  INSTALL CHART
+📌   INSTALL CHART
    helm install <release name> <chart name>
-🎯  TO SEE THE CHART
+📌   TO SEE THE CHART
   helm list -a
-🎯  UNINSTALL CHART
+📌   UNINSTALL CHART
    helm uninstall <release name>
-🎯  UPDATE AFTER MODIFICATION
+📌   UPDATE AFTER MODIFICATION
    helm upgrade <a release name> <chart name>
-🎯  CHECK ERRORS
+📌   CHECK ERRORS
    helm lint <chart name>
-🎯  ROLLBACK
+📌   ROLLBACK
    helm rollback <release name> 1 
    
   🧾 HELM REPO 
-   🎯 helm repo add bitnami https://charts.bitnami.com/bitnami
-   🎯 helm repo list
-   🎯 helm search repo (to see all the avaiable pre made )
-   🎯 helm install nginx stable/nginx-ingress (to install nginx from the repo list)
-   🎯 kubectl get pods/svc (to see the output)
-   🎯 helm list (to see the deployment)
-   🎯 helm get manifest nginx (to see the yaml file and other details (nginx is the release name here))
-   🎯 helm repo remove bitnami (to remove)
+   📌  helm repo add bitnami https://charts.bitnami.com/bitnami
+   📌  helm repo list
+   📌  helm search repo (to see all the avaiable pre made )
+   📌  helm install nginx stable/nginx-ingress (to install nginx from the repo list)
+   📌  kubectl get pods/svc (to see the output)
+   📌  helm list (to see the deployment)
+   📌  helm get manifest nginx (to see the yaml file and other details (nginx is the release name here))
+   📌  helm repo remove bitnami (to remove)
 
 ☸︎ TO MODIFY AN EXISTING CHART ☸︎
- 🎯  helm upgrade nginx   stable/nginx-ingress --set replicaCount=3
+
+ 📌   helm upgrade nginx   stable/nginx-ingress --set replicaCount=3
             (release name) (chart name)                                   
- 🎯 helm history nginx (will get an out put as below)
+ 📌  helm history nginx (will get an out put as below)
    REVISION	UPDATED                 	STATUS    	CHART               	APP VERSION	DESCRIPTION     
      1       	Mon May 25 11:55:47 2026	superseded	nginx-ingress-1.41.3	v0.34.1    	Install complete
      2       	Mon May 25 12:18:15 2026	deployed  	nginx-ingress-1.41.3	v0.34.1    	Upgrade complete
  
- 🎯 helm rollback nginx 1   (to rollback to 1st revision)
+ 📌  helm rollback nginx 1   (to rollback to 1st revision)
  
- 🎯 helm pull bitnami/nginx --untar (to download nginx chart and unzip it)
+ 📌  helm pull bitnami/nginx --untar (to download nginx chart and unzip it)
  
  
- 🎯 helm template releasename chartname (to see yaml file of deployment.yaml which we created using values)
- 🎯 helm lint mychart (to check issues in created chart)
+ 📌  helm template releasename chartname (to see yaml file of deployment.yaml which we created using values)
+ 📌  helm lint mychart (to check issues in created chart)
  
- 🎯 helm template releasename chartname (to see yaml file of deployment.yaml which we created using values)
+ 📌  helm template releasename chartname (to see yaml file of deployment.yaml which we created using values)
    
