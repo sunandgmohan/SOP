@@ -35,3 +35,7 @@ sum(rate(container_network_transmit_bytes_total{namespace="default"}[5m])) by (p
    
    kubectl get secret --namespace monitoring kind-prometheus-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 
+🎯 login to graffana - dashboards - new - add json file which downloaded from grafana dashboard
+
+
+
