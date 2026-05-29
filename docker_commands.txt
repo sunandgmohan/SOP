@@ -1,4 +1,4 @@
-🐋 DOCKER COMPOSE 🐋
+🐋 DOCKER COMMANDS 🐋
 
 📌 Docker Build Commands:
 
