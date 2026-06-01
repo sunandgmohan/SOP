@@ -10,6 +10,14 @@ sudo apt update && sudo apt install terraform
 
 🧩 STEPS
 
+🔨 Install awscli to sign in to aws from local matchine
+
+📌  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+📌  unzip awscliv2.zip
+📌  sudo ./aws/install
+
+📌  aws config -- add access key and login
+
 📌  Create a directory for your Terraform project and create a Terraform configuration file (usually named main.tf) in that directory. In this file, you define the AWS provider and resources you want to create. Here's a basic example
 
    provider "aws" {
