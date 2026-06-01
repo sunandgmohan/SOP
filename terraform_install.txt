@@ -58,6 +58,8 @@ resource "aws_subnet" "pubsub" {
 
 📌  terraform init
 
+📌  terraform plan (to do a dry run)
+
 📌  terraform apply
 
 📌  terraform destroy (to remove)
