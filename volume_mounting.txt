@@ -1,28 +1,29 @@
-VOLUME MOUNT
+📂 VOLUME MOUNT 📂
 
 
-df -h to see the mounted volume
+🔹df -h  -to see the mounted volume
 
-lsblk to see all the volume
+🔹lsblk -to see all the volume
 
-go to root - sudo su -
+🔹go to root
+     sudo su -
 
-make file system
+🔹make file system
 
-mkfs.ext4 /dev/new volume name
+   mkfs.ext4 /dev/new volume name
 
-create a droctory to mount
+🔹create a droctory to mount
 
-cd /opt/
-mkdir testvol
+   cd /opt/
+   mkdir testvol
 
-mount volume 
+🔹mount volume 
 
-mount /dev/newvolname /opt/testvol
+   mount /dev/newvolname /opt/testvol
 
 
-to see details/status of a volume
+🔹To see details/status of a volume
 
-file -s /dev/volname
+   file -s /dev/volname
 
 
