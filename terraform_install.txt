@@ -21,7 +21,7 @@ sudo apt update && sudo apt install terraform
 📌  Create a directory for your Terraform project and create a Terraform configuration file (usually named main.tf) in that directory. In this file, you define the AWS provider and resources you want to create. Here's a basic example
 
 📌  got to this link to get the latest provider version and templets for .tf file creation
-https://registry.terraform.io/providers/hashicorp/aws/latest 
+  🌐 https://registry.terraform.io/providers/hashicorp/aws/latest 
 
    terraform {
   required_providers {
