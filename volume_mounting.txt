@@ -1,0 +1,28 @@
+VOLUME MOUNT
+
+
+df -h to see the mounted volume
+
+lsblk to see all the volume
+
+go to root - sudo su -
+
+make file system
+
+mkfs.ext4 /dev/new volume name
+
+create a droctory to mount
+
+cd /opt/
+mkdir testvol
+
+mount volume 
+
+mount /dev/newvolname /opt/testvol
+
+
+to see details/status of a volume
+
+file -s /dev/volname
+
+
