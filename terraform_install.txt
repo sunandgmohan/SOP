@@ -62,4 +62,6 @@ resource "aws_subnet" "pubsub" {
 
 📌  terraform apply
 
+📌 cat terraform.tfstate (to see all the services created)
+
 📌  terraform destroy (to remove)
