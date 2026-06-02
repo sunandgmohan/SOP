@@ -65,3 +65,5 @@ resource "aws_subnet" "pubsub" {
 📌 cat terraform.tfstate (to see all the services created)
 
 📌  terraform destroy (to remove)
+
+📌  terraform init -upgrade (to upgrade to latest version)
