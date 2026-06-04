@@ -67,3 +67,17 @@ resource "aws_subnet" "pubsub" {
 📌  terraform destroy (to remove)
 
 📌  terraform init -upgrade (to upgrade to latest version)
+
+📌  terraform fmt (to align the .tf file)
+
+📌 terraform validate (to check the .tf file and look is the .tf file correct or not)
+
+📌 terraform show (to show what are the resources created as per state file)
+
+📌 terraform plan (to refresh (temperory) and update state file -- dry run)
+
+📌 terraform refresh (permanant refresh)
+
+📌 terraform state list (to see small list of all resources created)
+
+📌 terraform state show "a perticular resourse name we get from the above command" (to get the detailed info)
