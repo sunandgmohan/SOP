@@ -1,3 +1,38 @@
+version: "3.8"
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+    container_name: user-service
+    ports:
+      - "3001:3001"
+
+  product-service:
+    build:
+      context: ./product-service
+    container_name: product-service
+    ports:
+      - "3002:3002"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 version: "3"
 services:
   webapp:
