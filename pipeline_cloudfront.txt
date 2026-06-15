@@ -44,3 +44,59 @@ pipeline{
              }
        }
       }
+
+
+
+📌 backend DEPLOYMENT 
+
+
+pipeline {
+    agent any
+
+    environment {
+        IMAGE_NAME = 'app-backend'
+        CONTAINER_NAME = 'backend-contain'
+        EC2_IP = '54.197.113.122'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/sunandgmohan/E-flow-Backend.git'
+            }
+        }
+
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(['EC2_CRED']) {
+                    sh """
+                          ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} "
+                          rm -rf /home/ubuntu/backend
+                          mkdir -p /home/ubuntu/backend
+                          cd /home/ubuntu/backend
+                        
+
+                          if [ ! -d E-flow-Backend ]; then 
+                            git clone https://github.com/sunandgmohan/E-flow-Backend.git
+                          fi 
+                          
+                           cd E-flow-Backend
+                           git checkout main
+                           git pull origin main
+                        
+                           
+                           docker stop ${CONTAINER_NAME} || true
+                           docker rm ${CONTAINER_NAME} || true
+                           docker rmi ${IMAGE_NAME} || true
+                           docker build -t ${IMAGE_NAME} .
+                           docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${IMAGE_NAME}
+                        "
+                    """
+                }
+            }
+        }
+    }
+}
+
