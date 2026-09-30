@@ -17,29 +17,6 @@ CMD ["npm", "start"]
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 🐋 DOCKER FILE 🐋
 
 
