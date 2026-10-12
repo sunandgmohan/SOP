@@ -1,7 +1,9 @@
 ☸️ KIND INSTALLATION ☸️
 
+Kind (Kubernetes IN Docker) runs Kubernetes clusters entirely inside Docker containers. Each node is a container, making cluster creation fast and lightweight. Kind was originally built for testing Kubernetes itself and is widely used in CI/CD pipelines due to its speed, reproducibility, and ability to run multiple clusters side-by-side
 
-vim kind.sh
+
+🎯 vim kind.sh
 
 copy everything below and paste in it
 
@@ -22,7 +24,11 @@ echo "kind & kubectl Successfully Installed!"
 
 🎯 ./kind.sh
 
-🎯 CREATE CLUSTER
+🎯 kind version
+
+🎯 kubectl version
+
+🎯 CREATE A CLUSTER
 
 👉  vim config.yaml
   
